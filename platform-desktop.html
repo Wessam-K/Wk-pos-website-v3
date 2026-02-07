@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WK-Hub Desktop — A self-contained Windows application that works completely offline with LAN sync between branches.">
+  <meta name="theme-color" content="#0a0a12">
+  <title>Desktop App — WK-Hub Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/light.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a12'/%3E%3Ctext x='16' y='22' font-family='Inter,sans-serif' font-weight='700' font-size='14' fill='%23d4a853' text-anchor='middle'%3EWK%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="WK-Hub Home"><div class="nav__logo-mark">WK</div><span class="nav__logo-text">Hub</span></a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav__menu" id="nav-menu">
+        <a href="index.html#product" class="nav__link">Product</a>
+        <a href="index.html#features" class="nav__link">Features</a>
+        <a href="index.html#experience" class="nav__link">Experience</a>
+        <a href="index.html#why" class="nav__link">Why WK-Hub</a>
+        <a href="index.html#vision" class="nav__link">Vision</a>
+        <a href="index.html#services" class="nav__link">Services</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme"><div class="theme-toggle__thumb"><svg class="theme-toggle__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg></div></button>
+      <a href="demo.html" class="nav__cta">Get Started</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="platform-hero">
+      <div class="page-header__bg">
+        <div class="page-header__orb page-header__orb--1"></div>
+        <div class="page-header__orb page-header__orb--2"></div>
+      </div>
+      <div class="container">
+        <div class="platform-hero__layout">
+          <div>
+            <div class="platform-hero__badge reveal">Desktop Application</div>
+            <h1 class="platform-hero__title reveal" data-delay="100">The POS that never<br>needs the <span class="text-accent">internet.</span></h1>
+            <p class="platform-hero__desc reveal" data-delay="200">A self-contained Windows application with an embedded database. Install once, and your branch operates independently — forever. Syncs over LAN when you need it.</p>
+            <div class="platform-hero__actions reveal" data-delay="300">
+              <a href="demo.html" class="btn btn--primary"><span>Request a Demo</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <a href="contact.html" class="btn btn--ghost"><span>Talk to Us</span></a>
+            </div>
+          </div>
+
+          <div class="platform-visual reveal" data-delay="200">
+            <div class="platform-visual__device">
+              <div class="platform-visual__frame">
+                <div class="screen-mock__bar">
+                  <div class="screen-mock__dots"><span></span><span></span><span></span></div>
+                  <span class="screen-mock__title">WK-Hub Desktop v2.62</span>
+                </div>
+                <div class="screen-mock__body screen-mock__body--pos">
+                  <div class="mock-pos-grid">
+                    <div class="mock-pos-item"></div>
+                    <div class="mock-pos-item"></div>
+                    <div class="mock-pos-item"></div>
+                    <div class="mock-pos-item"></div>
+                    <div class="mock-pos-item"></div>
+                    <div class="mock-pos-item"></div>
+                    <div class="mock-pos-item"></div>
+                    <div class="mock-pos-item"></div>
+                    <div class="mock-pos-item"></div>
+                  </div>
+                  <div class="mock-pos-cart">
+                    <div class="mock-cart-item"><span></span><span class="mock-price"></span></div>
+                    <div class="mock-cart-item"><span></span><span class="mock-price"></span></div>
+                    <div class="mock-cart-item"><span></span><span class="mock-price"></span></div>
+                    <div class="mock-cart-item"><span></span><span class="mock-price"></span></div>
+                    <div class="mock-cart-divider"></div>
+                    <div class="mock-cart-total"><span></span><span class="mock-price mock-price--total"></span></div>
+                    <div class="mock-cart-btn"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specs -->
+    <section class="specs">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Technical Specs</span>
+          <h2 class="section__title">Engineered for <span class="text-accent">reliability.</span></h2>
+        </div>
+        <div class="specs__grid">
+          <div class="spec reveal"><div class="spec__value">93 MB</div><div class="spec__label">Installer Size</div></div>
+          <div class="spec reveal" data-delay="80"><div class="spec__value">SQLite</div><div class="spec__label">Embedded Database</div></div>
+          <div class="spec reveal" data-delay="160"><div class="spec__value">LAN</div><div class="spec__label">Branch-to-Branch Sync</div></div>
+          <div class="spec reveal" data-delay="240"><div class="spec__value">0%</div><div class="spec__label">Internet Dependency</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section platform-features">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Desktop Features</span>
+          <h2 class="section__title">Full power, <span class="text-accent">no connection.</span></h2>
+          <p class="section__desc">Everything the web app can do — plus native hardware integration and zero internet dependency.</p>
+        </div>
+        <div class="platform-features__grid">
+          <div class="platform-feature reveal">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3 class="platform-feature__title">True Offline Operation</h3>
+            <p class="platform-feature__desc">Embedded SQLite database means no server dependency. Sales, inventory, customers — everything stored locally and securely.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="60">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"/></svg></div>
+            <h3 class="platform-feature__title">LAN Sync</h3>
+            <p class="platform-feature__desc">WebSocket-based synchronization between machines on the same network. Main branch becomes the sync server — clients connect seamlessly.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="120">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div>
+            <h3 class="platform-feature__title">Hardware Integration</h3>
+            <p class="platform-feature__desc">Direct connection to thermal printers, barcode scanners, weighing scales, and cash drawers through the native desktop environment.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="180">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
+            <h3 class="platform-feature__title">One-Click Install</h3>
+            <p class="platform-feature__desc">Windows installer sets up everything — application, database, and background sync service. Under 100 MB total. No IT department needed.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="240">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+            <h3 class="platform-feature__title">Background Sync</h3>
+            <p class="platform-feature__desc">When internet is available, data syncs to the cloud silently in the background. Nothing interrupts the cashier's workflow.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="300">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+            <h3 class="platform-feature__title">Conflict Resolution</h3>
+            <p class="platform-feature__desc">Smart merge algorithms handle data conflicts when branches reconnect. Last-write-wins with full audit trail for every change.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta">
+      <div class="cta__bg"><div class="cta__orb cta__orb--1"></div><div class="cta__orb cta__orb--2"></div></div>
+      <div class="container">
+        <div class="cta__content reveal">
+          <span class="section__label">Get Started</span>
+          <h2 class="cta__title">Your branches keep selling.<br>Even when the internet doesn't.</h2>
+          <p class="cta__desc">See the Desktop app in action. We'll demonstrate offline operations, LAN sync, and hardware integration.</p>
+          <div class="cta__actions">
+            <a href="demo.html" class="btn btn--primary btn--lg"><span>Request a Demo</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="contact.html" class="btn btn--ghost btn--lg"><span>Contact Us</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand"><div class="footer__logo"><div class="nav__logo-mark">WK</div><span class="nav__logo-text">Hub</span></div><p class="footer__tagline">The business system that works<br>when the internet doesn't.</p></div>
+        <div class="footer__links">
+          <div class="footer__col"><h4>Product</h4><a href="index.html#product">Overview</a><a href="index.html#features">Features</a><a href="index.html#experience">Experience</a><a href="index.html#services">Services</a></div>
+          <div class="footer__col"><h4>Company</h4><a href="index.html#vision">Our Vision</a><a href="contact.html">Contact</a><a href="demo.html">Request Demo</a></div>
+          <div class="footer__col"><h4>Platform</h4><a href="platform-web.html">Web App</a><a href="platform-desktop.html">Desktop</a><a href="platform-mobile.html">Mobile</a><a href="platform-api.html">API Docs</a></div>
+        </div>
+      </div>
+      <div class="footer__bottom"><p>&copy; 2026 WK-Hub. All rights reserved.</p><p>Built for retail.</p></div>
+    </div>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

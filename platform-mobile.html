@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WK-Hub Mobile — Full POS capabilities in your pocket. Scan barcodes, check inventory, process sales from anywhere.">
+  <meta name="theme-color" content="#0a0a12">
+  <title>Mobile App — WK-Hub Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/light.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a12'/%3E%3Ctext x='16' y='22' font-family='Inter,sans-serif' font-weight='700' font-size='14' fill='%23d4a853' text-anchor='middle'%3EWK%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="WK-Hub Home"><div class="nav__logo-mark">WK</div><span class="nav__logo-text">Hub</span></a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav__menu" id="nav-menu">
+        <a href="index.html#product" class="nav__link">Product</a>
+        <a href="index.html#features" class="nav__link">Features</a>
+        <a href="index.html#experience" class="nav__link">Experience</a>
+        <a href="index.html#why" class="nav__link">Why WK-Hub</a>
+        <a href="index.html#vision" class="nav__link">Vision</a>
+        <a href="index.html#services" class="nav__link">Services</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme"><div class="theme-toggle__thumb"><svg class="theme-toggle__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg></div></button>
+      <a href="demo.html" class="nav__cta">Get Started</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="platform-hero">
+      <div class="page-header__bg">
+        <div class="page-header__orb page-header__orb--1"></div>
+        <div class="page-header__orb page-header__orb--2"></div>
+      </div>
+      <div class="container">
+        <div class="platform-hero__layout">
+          <div>
+            <div class="platform-hero__badge reveal">Mobile App</div>
+            <h1 class="platform-hero__title reveal" data-delay="100">Your business<br>in your <span class="text-accent">pocket.</span></h1>
+            <p class="platform-hero__desc reveal" data-delay="200">Full POS capabilities on iOS and Android. Scan barcodes with your camera, check stock across branches, process sales, and monitor your business from anywhere.</p>
+            <div class="platform-hero__actions reveal" data-delay="300">
+              <a href="demo.html" class="btn btn--primary"><span>Request a Demo</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <a href="contact.html" class="btn btn--ghost"><span>Learn More</span></a>
+            </div>
+          </div>
+
+          <div class="platform-visual reveal" data-delay="200">
+            <div class="platform-visual__device">
+              <div class="platform-visual__frame platform-visual__frame--phone">
+                <div class="screen-mock__bar" style="justify-content: center;">
+                  <span class="screen-mock__title">WK-Hub</span>
+                </div>
+                <div style="padding: 16px; display: flex; flex-direction: column; gap: 12px; min-height: 400px;">
+                  <!-- Mock mobile home screen -->
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                    <div style="height: 10px; width: 40%; border-radius: 5px; background: rgba(255,255,255,0.1);"></div>
+                    <div style="width: 28px; height: 28px; border-radius: 50%; background: var(--accent-dim); border: 1px solid var(--border-accent);"></div>
+                  </div>
+
+                  <!-- Stats cards -->
+                  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                    <div style="padding: 12px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid var(--border);">
+                      <div style="height: 8px; width: 50%; border-radius: 4px; background: var(--accent-dim); margin-bottom: 6px;"></div>
+                      <div style="height: 14px; width: 70%; border-radius: 4px; background: rgba(255,255,255,0.08);"></div>
+                    </div>
+                    <div style="padding: 12px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid var(--border);">
+                      <div style="height: 8px; width: 50%; border-radius: 4px; background: rgba(34,197,94,0.15); margin-bottom: 6px;"></div>
+                      <div style="height: 14px; width: 60%; border-radius: 4px; background: rgba(255,255,255,0.08);"></div>
+                    </div>
+                  </div>
+
+                  <!-- Quick actions -->
+                  <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-top: 4px;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                      <div style="width: 36px; height: 36px; border-radius: 10px; background: var(--accent-dim); border: 1px solid var(--border-accent);"></div>
+                      <div style="height: 4px; width: 24px; border-radius: 2px; background: rgba(255,255,255,0.06);"></div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                      <div style="width: 36px; height: 36px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid var(--border);"></div>
+                      <div style="height: 4px; width: 24px; border-radius: 2px; background: rgba(255,255,255,0.06);"></div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                      <div style="width: 36px; height: 36px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid var(--border);"></div>
+                      <div style="height: 4px; width: 24px; border-radius: 2px; background: rgba(255,255,255,0.06);"></div>
+                    </div>
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                      <div style="width: 36px; height: 36px; border-radius: 10px; background: rgba(255,255,255,0.03); border: 1px solid var(--border);"></div>
+                      <div style="height: 4px; width: 24px; border-radius: 2px; background: rgba(255,255,255,0.06);"></div>
+                    </div>
+                  </div>
+
+                  <!-- Recent transactions -->
+                  <div style="margin-top: 8px;">
+                    <div style="height: 8px; width: 45%; border-radius: 4px; background: rgba(255,255,255,0.08); margin-bottom: 10px;"></div>
+                    <div style="display: flex; flex-direction: column; gap: 6px;">
+                      <div style="display: flex; align-items: center; gap: 8px; padding: 8px; border-radius: 8px; background: rgba(255,255,255,0.02);">
+                        <div style="width: 28px; height: 28px; border-radius: 6px; background: rgba(255,255,255,0.04);"></div>
+                        <div style="flex: 1;"><div style="height: 6px; width: 60%; border-radius: 3px; background: rgba(255,255,255,0.08); margin-bottom: 4px;"></div><div style="height: 4px; width: 40%; border-radius: 2px; background: rgba(255,255,255,0.04);"></div></div>
+                        <div style="height: 6px; width: 30px; border-radius: 3px; background: rgba(34,197,94,0.2);"></div>
+                      </div>
+                      <div style="display: flex; align-items: center; gap: 8px; padding: 8px; border-radius: 8px; background: rgba(255,255,255,0.02);">
+                        <div style="width: 28px; height: 28px; border-radius: 6px; background: rgba(255,255,255,0.04);"></div>
+                        <div style="flex: 1;"><div style="height: 6px; width: 50%; border-radius: 3px; background: rgba(255,255,255,0.08); margin-bottom: 4px;"></div><div style="height: 4px; width: 35%; border-radius: 2px; background: rgba(255,255,255,0.04);"></div></div>
+                        <div style="height: 6px; width: 30px; border-radius: 3px; background: rgba(34,197,94,0.2);"></div>
+                      </div>
+                      <div style="display: flex; align-items: center; gap: 8px; padding: 8px; border-radius: 8px; background: rgba(255,255,255,0.02);">
+                        <div style="width: 28px; height: 28px; border-radius: 6px; background: rgba(255,255,255,0.04);"></div>
+                        <div style="flex: 1;"><div style="height: 6px; width: 55%; border-radius: 3px; background: rgba(255,255,255,0.08); margin-bottom: 4px;"></div><div style="height: 4px; width: 30%; border-radius: 2px; background: rgba(255,255,255,0.04);"></div></div>
+                        <div style="height: 6px; width: 30px; border-radius: 3px; background: rgba(245,158,11,0.2);"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Bottom nav mock -->
+                  <div style="display: flex; justify-content: space-around; padding-top: 12px; margin-top: auto; border-top: 1px solid var(--border);">
+                    <div style="width: 20px; height: 20px; border-radius: 4px; background: var(--accent-dim);"></div>
+                    <div style="width: 20px; height: 20px; border-radius: 4px; background: rgba(255,255,255,0.06);"></div>
+                    <div style="width: 20px; height: 20px; border-radius: 4px; background: rgba(255,255,255,0.06);"></div>
+                    <div style="width: 20px; height: 20px; border-radius: 4px; background: rgba(255,255,255,0.06);"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specs -->
+    <section class="specs">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Mobile First</span>
+          <h2 class="section__title">Designed for <span class="text-accent">real use.</span></h2>
+        </div>
+        <div class="specs__grid">
+          <div class="spec reveal"><div class="spec__value">iOS</div><div class="spec__label">iPhone & iPad</div></div>
+          <div class="spec reveal" data-delay="80"><div class="spec__value">Android</div><div class="spec__label">Phone & Tablet</div></div>
+          <div class="spec reveal" data-delay="160"><div class="spec__value">Camera</div><div class="spec__label">Built-in Barcode Scan</div></div>
+          <div class="spec reveal" data-delay="240"><div class="spec__value">Push</div><div class="spec__label">Real-Time Notifications</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section platform-features">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Mobile Capabilities</span>
+          <h2 class="section__title">Manage on <span class="text-accent">the move.</span></h2>
+          <p class="section__desc">Everything a store owner needs — from the phone that's already in their pocket.</p>
+        </div>
+        <div class="platform-features__grid">
+          <div class="platform-feature reveal">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+            <h3 class="platform-feature__title">Camera Barcode Scan</h3>
+            <p class="platform-feature__desc">Use your phone's camera as a barcode scanner. Instantly look up products, check stock, and add items to a sale.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="60">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+            <h3 class="platform-feature__title">Stock Check Anywhere</h3>
+            <p class="platform-feature__desc">Check inventory levels across all branches in real time. See what's in stock, what's running low, and what needs reordering.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="120">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg></div>
+            <h3 class="platform-feature__title">Process Sales</h3>
+            <p class="platform-feature__desc">Complete POS functionality on mobile. Ring up sales, accept payments, apply discounts, and issue receipts — from your phone.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="180">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div>
+            <h3 class="platform-feature__title">Push Notifications</h3>
+            <p class="platform-feature__desc">Get notified of low stock alerts, large transactions, approval requests, and branch sync status updates in real time.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="240">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+            <h3 class="platform-feature__title">Dashboard at a Glance</h3>
+            <p class="platform-feature__desc">Today's sales, revenue trends, top products, and branch performance — all on your home screen with real-time updates.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="300">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+            <h3 class="platform-feature__title">Customer Lookup</h3>
+            <p class="platform-feature__desc">Search customer profiles, view purchase history, check loyalty points, and manage customer groups — all from your mobile device.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta">
+      <div class="cta__bg"><div class="cta__orb cta__orb--1"></div><div class="cta__orb cta__orb--2"></div></div>
+      <div class="container">
+        <div class="cta__content reveal">
+          <span class="section__label">Get Started</span>
+          <h2 class="cta__title">Manage your business<br>from anywhere.</h2>
+          <p class="cta__desc">See the mobile experience in our demo. We'll show you POS, scanning, and real-time monitoring on the go.</p>
+          <div class="cta__actions">
+            <a href="demo.html" class="btn btn--primary btn--lg"><span>Request a Demo</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="contact.html" class="btn btn--ghost btn--lg"><span>Contact Us</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand"><div class="footer__logo"><div class="nav__logo-mark">WK</div><span class="nav__logo-text">Hub</span></div><p class="footer__tagline">The business system that works<br>when the internet doesn't.</p></div>
+        <div class="footer__links">
+          <div class="footer__col"><h4>Product</h4><a href="index.html#product">Overview</a><a href="index.html#features">Features</a><a href="index.html#experience">Experience</a><a href="index.html#services">Services</a></div>
+          <div class="footer__col"><h4>Company</h4><a href="index.html#vision">Our Vision</a><a href="contact.html">Contact</a><a href="demo.html">Request Demo</a></div>
+          <div class="footer__col"><h4>Platform</h4><a href="platform-web.html">Web App</a><a href="platform-desktop.html">Desktop</a><a href="platform-mobile.html">Mobile</a><a href="platform-api.html">API Docs</a></div>
+        </div>
+      </div>
+      <div class="footer__bottom"><p>&copy; 2026 WK-Hub. All rights reserved.</p><p>Built for retail.</p></div>
+    </div>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

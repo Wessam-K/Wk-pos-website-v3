@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WK-Hub Web App — Access your entire business operating system from any browser, anywhere. Real-time dashboards, POS, inventory, and accounting.">
+  <meta name="theme-color" content="#0a0a12">
+  <title>Web App — WK-Hub Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/light.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a12'/%3E%3Ctext x='16' y='22' font-family='Inter,sans-serif' font-weight='700' font-size='14' fill='%23d4a853' text-anchor='middle'%3EWK%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="WK-Hub Home">
+        <div class="nav__logo-mark">WK</div>
+        <span class="nav__logo-text">Hub</span>
+      </a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav__menu" id="nav-menu">
+        <a href="index.html#product" class="nav__link">Product</a>
+        <a href="index.html#features" class="nav__link">Features</a>
+        <a href="index.html#experience" class="nav__link">Experience</a>
+        <a href="index.html#why" class="nav__link">Why WK-Hub</a>
+        <a href="index.html#vision" class="nav__link">Vision</a>
+        <a href="index.html#services" class="nav__link">Services</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+        <div class="theme-toggle__thumb">
+          <svg class="theme-toggle__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+        </div>
+      </button>
+      <a href="demo.html" class="nav__cta">Get Started</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Platform Hero -->
+    <section class="platform-hero">
+      <div class="page-header__bg">
+        <div class="page-header__orb page-header__orb--1"></div>
+        <div class="page-header__orb page-header__orb--2"></div>
+      </div>
+      <div class="container">
+        <div class="platform-hero__layout">
+          <div>
+            <div class="platform-hero__badge reveal">Web Platform</div>
+            <h1 class="platform-hero__title reveal" data-delay="100">Your entire business<br>in a <span class="text-accent">browser tab.</span></h1>
+            <p class="platform-hero__desc reveal" data-delay="200">Access WK-Hub from any device with a browser. Progressive Web App technology means it loads fast, works offline, and feels native — without installing anything.</p>
+            <div class="platform-hero__actions reveal" data-delay="300">
+              <a href="demo.html" class="btn btn--primary">
+                <span>Request a Demo</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="index.html#features" class="btn btn--ghost"><span>See All Features</span></a>
+            </div>
+          </div>
+
+          <div class="platform-visual reveal" data-delay="200">
+            <div class="platform-visual__device">
+              <div class="platform-visual__frame">
+                <div class="screen-mock__bar">
+                  <div class="screen-mock__dots"><span></span><span></span><span></span></div>
+                  <span class="screen-mock__title">app.wkhub.com</span>
+                </div>
+                <div class="screen-mock__body">
+                  <div class="screen-mock__sidebar">
+                    <div class="mock-nav-item active"></div>
+                    <div class="mock-nav-item"></div>
+                    <div class="mock-nav-item"></div>
+                    <div class="mock-nav-item"></div>
+                    <div class="mock-nav-item"></div>
+                    <div class="mock-nav-item"></div>
+                  </div>
+                  <div class="screen-mock__content">
+                    <div class="mock-stat-row">
+                      <div class="mock-stat"><div class="mock-stat__value"></div><div class="mock-stat__label"></div></div>
+                      <div class="mock-stat"><div class="mock-stat__value"></div><div class="mock-stat__label"></div></div>
+                      <div class="mock-stat"><div class="mock-stat__value"></div><div class="mock-stat__label"></div></div>
+                    </div>
+                    <div class="mock-chart">
+                      <svg viewBox="0 0 300 80" preserveAspectRatio="none">
+                        <path d="M0,60 C40,50 80,20 120,35 C160,50 200,15 240,25 L300,20 L300,80 L0,80Z" fill="url(#cGrad)" opacity="0.3"/>
+                        <path d="M0,60 C40,50 80,20 120,35 C160,50 200,15 240,25 L300,20" fill="none" stroke="var(--accent)" stroke-width="2"/>
+                        <defs><linearGradient id="cGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="var(--accent)"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+                      </svg>
+                    </div>
+                    <div class="mock-table">
+                      <div class="mock-row mock-row--header"><span></span><span></span><span></span></div>
+                      <div class="mock-row"><span></span><span></span><span class="mock-badge mock-badge--green"></span></div>
+                      <div class="mock-row"><span></span><span></span><span class="mock-badge mock-badge--green"></span></div>
+                      <div class="mock-row"><span></span><span></span><span class="mock-badge mock-badge--amber"></span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specs -->
+    <section class="specs">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Performance</span>
+          <h2 class="section__title">Built for <span class="text-accent">speed.</span></h2>
+        </div>
+        <div class="specs__grid">
+          <div class="spec reveal" data-delay="0">
+            <div class="spec__value">&lt;2s</div>
+            <div class="spec__label">Initial Load Time</div>
+          </div>
+          <div class="spec reveal" data-delay="80">
+            <div class="spec__value">PWA</div>
+            <div class="spec__label">Progressive Web App</div>
+          </div>
+          <div class="spec reveal" data-delay="160">
+            <div class="spec__value">SSL</div>
+            <div class="spec__label">End-to-End Encrypted</div>
+          </div>
+          <div class="spec reveal" data-delay="240">
+            <div class="spec__value">99.9%</div>
+            <div class="spec__label">Uptime Target</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section platform-features">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Web Capabilities</span>
+          <h2 class="section__title">Everything, <span class="text-accent">everywhere.</span></h2>
+          <p class="section__desc">The full WK-Hub experience — optimized for browser performance.</p>
+        </div>
+        <div class="platform-features__grid">
+          <div class="platform-feature reveal" data-delay="0">
+            <div class="platform-feature__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </div>
+            <h3 class="platform-feature__title">Full POS Interface</h3>
+            <p class="platform-feature__desc">Touch-optimized checkout with barcode scanning, product search, cart management, and multi-method payments.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="60">
+            <div class="platform-feature__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
+            </div>
+            <h3 class="platform-feature__title">Inventory Dashboard</h3>
+            <p class="platform-feature__desc">Real-time stock levels across all branches. Low stock alerts, variant management, and batch operations.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="120">
+            <div class="platform-feature__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+            </div>
+            <h3 class="platform-feature__title">Financial Reports</h3>
+            <p class="platform-feature__desc">P&L, balance sheet, trial balance, cash flow — all rendered beautifully with export to PDF, Excel, and CSV.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="180">
+            <div class="platform-feature__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3 class="platform-feature__title">Live Analytics</h3>
+            <p class="platform-feature__desc">Sales trends, top products, customer insights — updating in real time as transactions flow through your branches.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="240">
+            <div class="platform-feature__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="platform-feature__title">Offline Mode</h3>
+            <p class="platform-feature__desc">Service worker technology keeps critical functions running even when connectivity drops. Data syncs on reconnect.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="300">
+            <div class="platform-feature__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg>
+            </div>
+            <h3 class="platform-feature__title">Team Management</h3>
+            <p class="platform-feature__desc">Manage shifts, track attendance, calculate commissions, and control access permissions — all from the web app.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta">
+      <div class="cta__bg">
+        <div class="cta__orb cta__orb--1"></div>
+        <div class="cta__orb cta__orb--2"></div>
+      </div>
+      <div class="container">
+        <div class="cta__content reveal">
+          <span class="section__label">Get Started</span>
+          <h2 class="cta__title">Ready to see the<br>web app in action?</h2>
+          <p class="cta__desc">Book a demo and we'll walk you through the full web experience.</p>
+          <div class="cta__actions">
+            <a href="demo.html" class="btn btn--primary btn--lg"><span>Request a Demo</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="contact.html" class="btn btn--ghost btn--lg"><span>Contact Us</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="footer__logo"><div class="nav__logo-mark">WK</div><span class="nav__logo-text">Hub</span></div>
+          <p class="footer__tagline">The business system that works<br>when the internet doesn't.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col"><h4>Product</h4><a href="index.html#product">Overview</a><a href="index.html#features">Features</a><a href="index.html#experience">Experience</a><a href="index.html#services">Services</a></div>
+          <div class="footer__col"><h4>Company</h4><a href="index.html#vision">Our Vision</a><a href="contact.html">Contact</a><a href="demo.html">Request Demo</a></div>
+          <div class="footer__col"><h4>Platform</h4><a href="platform-web.html">Web App</a><a href="platform-desktop.html">Desktop</a><a href="platform-mobile.html">Mobile</a><a href="platform-api.html">API Docs</a></div>
+        </div>
+      </div>
+      <div class="footer__bottom"><p>&copy; 2026 WK-Hub. All rights reserved.</p><p>Built for retail.</p></div>
+    </div>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

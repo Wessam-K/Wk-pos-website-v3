@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WK-Hub REST API — Integrate your POS data with any system. Webhooks, scoped keys, HMAC authentication, and comprehensive endpoints.">
+  <meta name="theme-color" content="#0a0a12">
+  <title>API Documentation — WK-Hub Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/light.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a12'/%3E%3Ctext x='16' y='22' font-family='Inter,sans-serif' font-weight='700' font-size='14' fill='%23d4a853' text-anchor='middle'%3EWK%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="WK-Hub Home"><div class="nav__logo-mark">WK</div><span class="nav__logo-text">Hub</span></a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav__menu" id="nav-menu">
+        <a href="index.html#product" class="nav__link">Product</a>
+        <a href="index.html#features" class="nav__link">Features</a>
+        <a href="index.html#experience" class="nav__link">Experience</a>
+        <a href="index.html#why" class="nav__link">Why WK-Hub</a>
+        <a href="index.html#vision" class="nav__link">Vision</a>
+        <a href="index.html#services" class="nav__link">Services</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme"><div class="theme-toggle__thumb"><svg class="theme-toggle__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg></div></button>
+      <a href="demo.html" class="nav__cta">Get Started</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="platform-hero">
+      <div class="page-header__bg">
+        <div class="page-header__orb page-header__orb--1"></div>
+        <div class="page-header__orb page-header__orb--2"></div>
+      </div>
+      <div class="container">
+        <div class="platform-hero__layout">
+          <div>
+            <div class="platform-hero__badge reveal">REST API</div>
+            <h1 class="platform-hero__title reveal" data-delay="100">Build on<br><span class="text-accent">WK-Hub.</span></h1>
+            <p class="platform-hero__desc reveal" data-delay="200">A comprehensive REST API for integrating WK-Hub POS data with your existing systems. Scoped API keys, HMAC signatures, webhooks, and clean JSON endpoints.</p>
+            <div class="platform-hero__actions reveal" data-delay="300">
+              <a href="demo.html" class="btn btn--primary"><span>Request Access</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+              <a href="contact.html" class="btn btn--ghost"><span>Talk to Us</span></a>
+            </div>
+          </div>
+
+          <div class="platform-visual reveal" data-delay="200">
+            <div class="platform-visual__device">
+              <div class="platform-visual__frame">
+                <div class="screen-mock__bar">
+                  <div class="screen-mock__dots"><span></span><span></span><span></span></div>
+                  <span class="screen-mock__title">api.wk-hub.com</span>
+                </div>
+                <div style="padding: 16px; font-family: 'Courier New', monospace; font-size: 11px; line-height: 1.8; color: rgba(255,255,255,0.7); overflow: hidden;">
+                  <div style="color: rgba(255,255,255,0.35); margin-bottom: 4px;">// GET /api/v1/products</div>
+                  <div>{</div>
+                  <div style="padding-left: 16px;"><span style="color: #d4a853;">"status"</span>: <span style="color: #22c55e;">"success"</span>,</div>
+                  <div style="padding-left: 16px;"><span style="color: #d4a853;">"data"</span>: {</div>
+                  <div style="padding-left: 32px;"><span style="color: #d4a853;">"products"</span>: [</div>
+                  <div style="padding-left: 48px;">{</div>
+                  <div style="padding-left: 64px;"><span style="color: #d4a853;">"id"</span>: <span style="color: #60a5fa;">1042</span>,</div>
+                  <div style="padding-left: 64px;"><span style="color: #d4a853;">"name"</span>: <span style="color: #22c55e;">"Premium Blend"</span>,</div>
+                  <div style="padding-left: 64px;"><span style="color: #d4a853;">"barcode"</span>: <span style="color: #22c55e;">"628001..."</span>,</div>
+                  <div style="padding-left: 64px;"><span style="color: #d4a853;">"stock"</span>: <span style="color: #60a5fa;">384</span>,</div>
+                  <div style="padding-left: 64px;"><span style="color: #d4a853;">"branches"</span>: <span style="color: #60a5fa;">12</span></div>
+                  <div style="padding-left: 48px;">}</div>
+                  <div style="padding-left: 32px;">],</div>
+                  <div style="padding-left: 32px;"><span style="color: #d4a853;">"total"</span>: <span style="color: #60a5fa;">2847</span></div>
+                  <div style="padding-left: 16px;">}</div>
+                  <div>}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specs -->
+    <section class="specs">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">API Overview</span>
+          <h2 class="section__title">Clean, powerful, <span class="text-accent">reliable.</span></h2>
+        </div>
+        <div class="specs__grid">
+          <div class="spec reveal"><div class="spec__value">REST</div><div class="spec__label">JSON-based API</div></div>
+          <div class="spec reveal" data-delay="80"><div class="spec__value">HMAC</div><div class="spec__label">SHA-256 Auth</div></div>
+          <div class="spec reveal" data-delay="160"><div class="spec__value">Webhooks</div><div class="spec__label">Real-Time Events</div></div>
+          <div class="spec reveal" data-delay="240"><div class="spec__value">v1</div><div class="spec__label">Versioned Endpoints</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Endpoints -->
+    <section class="section platform-features">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Endpoints</span>
+          <h2 class="section__title">Core <span class="text-accent">resources.</span></h2>
+          <p class="section__desc">All the data you need, through clean and consistent endpoints.</p>
+        </div>
+
+        <div class="api-endpoints">
+          <!-- Products -->
+          <div class="api-endpoint reveal">
+            <div class="api-endpoint__header">
+              <span class="api-method api-method--get">GET</span>
+              <code class="api-endpoint__path">/api/v1/products</code>
+            </div>
+            <p class="api-endpoint__desc">List all products with filtering, pagination, and branch-level stock data. Supports barcode lookup.</p>
+            <div class="code-block">
+              <div class="code-block__header"><span>Response</span></div>
+              <pre><code>{
+  "status": "success",
+  "data": {
+    "products": [...],
+    "pagination": { "page": 1, "total": 2847 }
+  }
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Sales -->
+          <div class="api-endpoint reveal" data-delay="60">
+            <div class="api-endpoint__header">
+              <span class="api-method api-method--post">POST</span>
+              <code class="api-endpoint__path">/api/v1/sales</code>
+            </div>
+            <p class="api-endpoint__desc">Create a new sale transaction. Supports multi-item carts, discounts, payment splitting, customer linking, and receipt generation.</p>
+            <div class="code-block">
+              <div class="code-block__header"><span>Request Body</span></div>
+              <pre><code>{
+  "branch_id": 3,
+  "items": [
+    { "product_id": 1042, "qty": 2, "discount": 0 }
+  ],
+  "payment_method": "cash",
+  "customer_id": 584
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Inventory -->
+          <div class="api-endpoint reveal" data-delay="120">
+            <div class="api-endpoint__header">
+              <span class="api-method api-method--get">GET</span>
+              <code class="api-endpoint__path">/api/v1/inventory/{branch_id}</code>
+            </div>
+            <p class="api-endpoint__desc">Get real-time stock levels for a specific branch. Includes low-stock alerts, reorder points, and category breakdown.</p>
+            <div class="code-block">
+              <div class="code-block__header"><span>Response</span></div>
+              <pre><code>{
+  "branch": "Downtown Store",
+  "total_items": 4231,
+  "low_stock": 23,
+  "categories": [...]
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Reports -->
+          <div class="api-endpoint reveal" data-delay="180">
+            <div class="api-endpoint__header">
+              <span class="api-method api-method--get">GET</span>
+              <code class="api-endpoint__path">/api/v1/reports/revenue</code>
+            </div>
+            <p class="api-endpoint__desc">Revenue reports with date ranges, branch filtering, and comparison periods. Supports daily, weekly, and monthly aggregation.</p>
+            <div class="code-block">
+              <div class="code-block__header"><span>Response</span></div>
+              <pre><code>{
+  "period": "2025-06",
+  "revenue": 847320.50,
+  "transactions": 3421,
+  "avg_basket": 247.66
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Customers -->
+          <div class="api-endpoint reveal" data-delay="240">
+            <div class="api-endpoint__header">
+              <span class="api-method api-method--put">PUT</span>
+              <code class="api-endpoint__path">/api/v1/customers/{id}</code>
+            </div>
+            <p class="api-endpoint__desc">Update customer profile, loyalty points, group membership, and contact information. Includes purchase history linking.</p>
+            <div class="code-block">
+              <div class="code-block__header"><span>Request Body</span></div>
+              <pre><code>{
+  "name": "Ahmed Hassan",
+  "phone": "+20 10 1234 5678",
+  "group": "VIP",
+  "loyalty_points": 2450
+}</code></pre>
+            </div>
+          </div>
+
+          <!-- Webhooks -->
+          <div class="api-endpoint reveal" data-delay="300">
+            <div class="api-endpoint__header">
+              <span class="api-method api-method--post">POST</span>
+              <code class="api-endpoint__path">/api/v1/webhooks</code>
+            </div>
+            <p class="api-endpoint__desc">Register webhook endpoints for real-time event notifications. Supports sale completed, stock alert, branch sync, and customer events.</p>
+            <div class="code-block">
+              <div class="code-block__header"><span>Request Body</span></div>
+              <pre><code>{
+  "url": "https://your-app.com/hooks",
+  "events": [
+    "sale.completed",
+    "stock.low",
+    "branch.synced"
+  ],
+  "secret": "your_webhook_secret"
+}</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- API Features -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Developer Experience</span>
+          <h2 class="section__title">Built for <span class="text-accent">developers.</span></h2>
+        </div>
+        <div class="platform-features__grid">
+          <div class="platform-feature reveal">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+            <h3 class="platform-feature__title">Scoped API Keys</h3>
+            <p class="platform-feature__desc">Create keys scoped to specific resources, branches, and permission levels. Rotate keys without downtime.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="60">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+            <h3 class="platform-feature__title">HMAC Authentication</h3>
+            <p class="platform-feature__desc">SHA-256 HMAC request signing ensures data integrity and prevents replay attacks. Every request is verified.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="120">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+            <h3 class="platform-feature__title">Consistent JSON</h3>
+            <p class="platform-feature__desc">Every endpoint returns structured JSON with predictable status codes, error messages, and pagination metadata.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="180">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+            <h3 class="platform-feature__title">Rate Limiting</h3>
+            <p class="platform-feature__desc">Transparent rate limits with headers showing remaining quota. Burst allowances for high-throughput integrations.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="240">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg></div>
+            <h3 class="platform-feature__title">Webhook Events</h3>
+            <p class="platform-feature__desc">Subscribe to 15+ event types. Events are retried with exponential backoff and include delivery logs for debugging.</p>
+          </div>
+          <div class="platform-feature reveal" data-delay="300">
+            <div class="platform-feature__icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div>
+            <h3 class="platform-feature__title">Versioned & Documented</h3>
+            <p class="platform-feature__desc">Full OpenAPI 3.0 specification. Interactive docs, code samples in cURL/Python/Node, and changelog for every version.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section cta">
+      <div class="cta__bg"><div class="cta__orb cta__orb--1"></div><div class="cta__orb cta__orb--2"></div></div>
+      <div class="container">
+        <div class="cta__content reveal">
+          <span class="section__label">Get Started</span>
+          <h2 class="cta__title">Ready to integrate?</h2>
+          <p class="cta__desc">Request API access and get your scoped keys. Our developer relations team is here to help you build.</p>
+          <div class="cta__actions">
+            <a href="demo.html" class="btn btn--primary btn--lg"><span>Request API Access</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <a href="contact.html" class="btn btn--ghost btn--lg"><span>Contact Us</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand"><div class="footer__logo"><div class="nav__logo-mark">WK</div><span class="nav__logo-text">Hub</span></div><p class="footer__tagline">The business system that works<br>when the internet doesn't.</p></div>
+        <div class="footer__links">
+          <div class="footer__col"><h4>Product</h4><a href="index.html#product">Overview</a><a href="index.html#features">Features</a><a href="index.html#experience">Experience</a><a href="index.html#services">Services</a></div>
+          <div class="footer__col"><h4>Company</h4><a href="index.html#vision">Our Vision</a><a href="contact.html">Contact</a><a href="demo.html">Request Demo</a></div>
+          <div class="footer__col"><h4>Platform</h4><a href="platform-web.html">Web App</a><a href="platform-desktop.html">Desktop</a><a href="platform-mobile.html">Mobile</a><a href="platform-api.html">API Docs</a></div>
+        </div>
+      </div>
+      <div class="footer__bottom"><p>&copy; 2026 WK-Hub. All rights reserved.</p><p>Built for retail.</p></div>
+    </div>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

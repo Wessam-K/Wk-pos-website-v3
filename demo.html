@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Request a personalized demo of WK-Hub — the offline-first business operating system for multi-branch retail.">
+  <meta name="theme-color" content="#0a0a12">
+  <title>Request a Demo — WK-Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/light.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a12'/%3E%3Ctext x='16' y='22' font-family='Inter,sans-serif' font-weight='700' font-size='14' fill='%23d4a853' text-anchor='middle'%3EWK%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="WK-Hub Home">
+        <div class="nav__logo-mark">WK</div>
+        <span class="nav__logo-text">Hub</span>
+      </a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav__menu" id="nav-menu">
+        <a href="index.html#product" class="nav__link">Product</a>
+        <a href="index.html#features" class="nav__link">Features</a>
+        <a href="index.html#experience" class="nav__link">Experience</a>
+        <a href="index.html#why" class="nav__link">Why WK-Hub</a>
+        <a href="index.html#vision" class="nav__link">Vision</a>
+        <a href="index.html#services" class="nav__link">Services</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+        <div class="theme-toggle__thumb">
+          <svg class="theme-toggle__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+        </div>
+      </button>
+      <a href="demo.html" class="nav__cta">Get Started</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="page-header__bg">
+        <div class="page-header__orb page-header__orb--1"></div>
+        <div class="page-header__orb page-header__orb--2"></div>
+      </div>
+      <div class="container">
+        <div class="section__label reveal">Demo</div>
+        <h1 class="page-header__title reveal" data-delay="100">
+          See WK-Hub <span class="text-accent">in action.</span>
+        </h1>
+        <p class="page-header__desc reveal" data-delay="200">
+          A personalized walkthrough of the platform, tailored to your business. No slides. Real software.
+        </p>
+      </div>
+    </header>
+
+    <!-- Form Section -->
+    <section class="section form-section">
+      <div class="container">
+        <div class="form-layout">
+          <!-- Left Info -->
+          <div class="form-info reveal">
+            <h2 class="form-info__title">What to expect from<br>your demo</h2>
+            <p class="form-info__desc">We'll walk through the areas that matter most to your operations. This isn't a sales pitch — it's an honest look at whether WK-Hub is the right fit.</p>
+
+            <div class="form-info__features">
+              <div class="form-info__feature">
+                <div class="form-info__feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                </div>
+                <div>
+                  <h4>30-Minute Session</h4>
+                  <p>Focused, no-fluff walkthrough of the platform customized for your use case.</p>
+                </div>
+              </div>
+
+              <div class="form-info__feature">
+                <div class="form-info__feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <div>
+                  <h4>Live Product Demo</h4>
+                  <p>Real software, real data. See POS, inventory, accounting, and multi-branch in action.</p>
+                </div>
+              </div>
+
+              <div class="form-info__feature">
+                <div class="form-info__feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                </div>
+                <div>
+                  <h4>Your Questions Answered</h4>
+                  <p>Bring your toughest questions. We'll answer honestly — including when WK-Hub isn't the right fit.</p>
+                </div>
+              </div>
+
+              <div class="form-info__feature">
+                <div class="form-info__feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <div>
+                  <h4>No Commitment Required</h4>
+                  <p>No credit card. No contract. Just learn what WK-Hub can do for your business.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Form -->
+          <div class="form-card reveal" data-delay="100">
+            <h3 class="form-card__title">Request Your Demo</h3>
+            <p class="form-card__subtitle">We'll get back to you within 24 hours.</p>
+
+            <form id="demo-form" novalidate>
+              <div class="form__row">
+                <div class="form__group">
+                  <label class="form__label" for="firstName">First Name *</label>
+                  <input class="form__input" type="text" id="firstName" name="firstName" placeholder="Ahmed" required>
+                </div>
+                <div class="form__group">
+                  <label class="form__label" for="lastName">Last Name *</label>
+                  <input class="form__input" type="text" id="lastName" name="lastName" placeholder="Hassan" required>
+                </div>
+              </div>
+
+              <div class="form__group">
+                <label class="form__label" for="email">Work Email *</label>
+                <input class="form__input" type="email" id="email" name="email" placeholder="ahmed@company.com" required>
+              </div>
+
+              <div class="form__group">
+                <label class="form__label" for="phone">Phone Number</label>
+                <input class="form__input" type="tel" id="phone" name="phone" placeholder="+20 XXX XXX XXXX">
+              </div>
+
+              <div class="form__group">
+                <label class="form__label" for="company">Company Name *</label>
+                <input class="form__input" type="text" id="company" name="company" placeholder="Your company" required>
+              </div>
+
+              <div class="form__row">
+                <div class="form__group">
+                  <label class="form__label" for="branches">Number of Branches</label>
+                  <select class="form__select" id="branches" name="branches">
+                    <option value="">Select...</option>
+                    <option value="1">1 branch</option>
+                    <option value="2-5">2–5 branches</option>
+                    <option value="6-10">6–10 branches</option>
+                    <option value="11-25">11–25 branches</option>
+                    <option value="25+">25+ branches</option>
+                  </select>
+                </div>
+                <div class="form__group">
+                  <label class="form__label" for="industry">Industry</label>
+                  <select class="form__select" id="industry" name="industry">
+                    <option value="">Select...</option>
+                    <option value="clothing">Clothing & Fashion</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="grocery">Grocery & Food</option>
+                    <option value="pharmacy">Pharmacy</option>
+                    <option value="general">General Retail</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form__group">
+                <label class="form__label" for="interest">What interests you most?</label>
+                <select class="form__select" id="interest" name="interest">
+                  <option value="">Select...</option>
+                  <option value="pos">Point of Sale</option>
+                  <option value="inventory">Inventory Management</option>
+                  <option value="accounting">Built-in Accounting</option>
+                  <option value="multi-branch">Multi-Branch Operations</option>
+                  <option value="offline">Offline-First Capability</option>
+                  <option value="full">Full Platform Tour</option>
+                </select>
+              </div>
+
+              <div class="form__group">
+                <label class="form__label" for="message">Anything else we should know?</label>
+                <textarea class="form__textarea" id="message" name="message" placeholder="Tell us about your current setup, challenges, or specific questions..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--lg form__submit">
+                <span>Request Demo</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </button>
+              <p class="form__note">No credit card required · Response within 24 hours</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <div class="nav__logo-mark">WK</div>
+            <span class="nav__logo-text">Hub</span>
+          </div>
+          <p class="footer__tagline">The business system that works<br>when the internet doesn't.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Product</h4>
+            <a href="index.html#product">Overview</a>
+            <a href="index.html#features">Features</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#services">Services</a>
+          </div>
+          <div class="footer__col">
+            <h4>Company</h4>
+            <a href="index.html#vision">Our Vision</a>
+            <a href="contact.html">Contact</a>
+            <a href="demo.html">Request Demo</a>
+          </div>
+          <div class="footer__col">
+            <h4>Platform</h4>
+            <a href="platform-web.html">Web App</a>
+            <a href="platform-desktop.html">Desktop</a>
+            <a href="platform-mobile.html">Mobile</a>
+            <a href="platform-api.html">API Docs</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 WK-Hub. All rights reserved.</p>
+        <p>Built for retail.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

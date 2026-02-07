@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="WK-Hub — The offline-first business operating system built for multi-branch retail. Manage sales, inventory, accounting, and teams from one unified platform.">
+  <meta name="theme-color" content="#0a0a12">
+  <title>WK-Hub — Business Operating System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/light.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a12'/%3E%3Ctext x='16' y='22' font-family='Inter,sans-serif' font-weight='700' font-size='14' fill='%23d4a853' text-anchor='middle'%3EWK%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <!-- Ambient Background Canvas -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo" aria-label="WK-Hub Home">
+        <div class="nav__logo-mark">WK</div>
+        <span class="nav__logo-text">Hub</span>
+      </a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav__menu" id="nav-menu">
+        <a href="#product" class="nav__link">Product</a>
+        <a href="#features" class="nav__link">Features</a>
+        <a href="#experience" class="nav__link">Experience</a>
+        <a href="#why" class="nav__link">Why WK-Hub</a>
+        <a href="#vision" class="nav__link">Vision</a>
+        <a href="#services" class="nav__link">Services</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+        <div class="theme-toggle__thumb">
+          <svg class="theme-toggle__icon theme-toggle__icon--dark" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+        </div>
+      </button>
+      <a href="demo.html" class="nav__cta">Get Started</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ═══════════════════════════════════════ -->
+    <!-- HERO SECTION                           -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero__bg">
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+        <div class="hero__orb hero__orb--3"></div>
+        <div class="hero__grid" aria-hidden="true"></div>
+      </div>
+      <div class="hero__content">
+        <div class="hero__badge reveal" data-delay="0">
+          <span class="hero__badge-dot"></span>
+          Offline-First Business Operating System
+        </div>
+        <h1 class="hero__title reveal" data-delay="100">
+          One system to run<br>
+          <span class="hero__title-accent">every branch.</span>
+        </h1>
+        <p class="hero__subtitle reveal" data-delay="200">
+          Sales, inventory, accounting, and teams — unified in one platform 
+          that works even when the internet doesn't.
+        </p>
+        <div class="hero__actions reveal" data-delay="300">
+          <a href="#contact" class="btn btn--primary">
+            <span>Start Your Journey</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#product" class="btn btn--ghost">
+            <span>See How It Works</span>
+          </a>
+        </div>
+        <div class="hero__proof reveal" data-delay="400">
+          <div class="hero__proof-item">
+            <span class="hero__proof-number" data-count="150">0</span><span class="hero__proof-plus">+</span>
+            <span class="hero__proof-label">Features</span>
+          </div>
+          <div class="hero__proof-divider"></div>
+          <div class="hero__proof-item">
+            <span class="hero__proof-number" data-count="6">0</span>
+            <span class="hero__proof-label">Platforms</span>
+          </div>
+          <div class="hero__proof-divider"></div>
+          <div class="hero__proof-item">
+            <span class="hero__proof-number" data-count="0">0</span><span class="hero__proof-suffix">%</span>
+            <span class="hero__proof-label">Data Loss</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll-indicator reveal" data-delay="600">
+        <div class="hero__scroll-line"></div>
+        <span>Scroll to explore</span>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- PRODUCT OVERVIEW                       -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="section product" id="product">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">The Platform</span>
+          <h2 class="section__title">More than a POS.<br><span class="text-accent">A business operating system.</span></h2>
+          <p class="section__desc">WK-Hub replaces the patchwork of disconnected tools retail businesses struggle with daily. One unified system that handles everything — from the first scan to the final report.</p>
+        </div>
+
+        <div class="product__flow">
+          <div class="product__flow-track">
+            <div class="product__flow-card reveal" data-delay="0">
+              <div class="product__flow-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              </div>
+              <h3>Point of Sale</h3>
+              <p>Touch-optimized interface. Barcode scanning. Split payments. Hold & resume orders. Built for speed at the counter.</p>
+            </div>
+            <div class="product__flow-connector" aria-hidden="true">
+              <svg width="40" height="24" viewBox="0 0 40 24"><path d="M0 12h36M30 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"/></svg>
+            </div>
+            <div class="product__flow-card reveal" data-delay="100">
+              <div class="product__flow-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+              </div>
+              <h3>Inventory</h3>
+              <p>Multi-branch stock control. Variants. Transfers with approval workflows. Real-time reconciliation across locations.</p>
+            </div>
+            <div class="product__flow-connector" aria-hidden="true">
+              <svg width="40" height="24" viewBox="0 0 40 24"><path d="M0 12h36M30 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"/></svg>
+            </div>
+            <div class="product__flow-card reveal" data-delay="200">
+              <div class="product__flow-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+              </div>
+              <h3>Accounting</h3>
+              <p>Double-entry bookkeeping. Auto-generated journal entries. P&L, balance sheet, trial balance — no spreadsheets.</p>
+            </div>
+            <div class="product__flow-connector" aria-hidden="true">
+              <svg width="40" height="24" viewBox="0 0 40 24"><path d="M0 12h36M30 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5" opacity="0.3"/></svg>
+            </div>
+            <div class="product__flow-card reveal" data-delay="300">
+              <div class="product__flow-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+              </div>
+              <h3>Teams & HR</h3>
+              <p>Shifts, attendance, commissions, payroll. Role-based access with 150+ granular permissions per user.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- FEATURES GRID                          -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="section features" id="features">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Capabilities</span>
+          <h2 class="section__title">Everything your<br><span class="text-accent">retail operation needs.</span></h2>
+        </div>
+
+        <div class="features__grid">
+          <div class="feature-card reveal" data-delay="0">
+            <div class="feature-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="feature-card__title">Offline-First Architecture</h3>
+            <p class="feature-card__desc">Every branch operates independently. Internet drops? Sales continue. Everything syncs seamlessly on reconnect — zero data loss, ever.</p>
+          </div>
+
+          <div class="feature-card reveal" data-delay="50">
+            <div class="feature-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+            </div>
+            <h3 class="feature-card__title">Multi-Branch Control</h3>
+            <p class="feature-card__desc">Stock transfers with approval workflows. Branch-specific pricing. Consolidated reporting. Real operational control, not just dashboards.</p>
+          </div>
+
+          <div class="feature-card reveal" data-delay="100">
+            <div class="feature-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3 class="feature-card__title">Built-In Accounting</h3>
+            <p class="feature-card__desc">Every sale auto-generates journal entries. Chart of accounts, trial balance, P&L, balance sheet — all built in, no external software needed.</p>
+          </div>
+
+          <div class="feature-card reveal" data-delay="150">
+            <div class="feature-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+            </div>
+            <h3 class="feature-card__title">Flexible Payments</h3>
+            <p class="feature-card__desc">Cash, card, mobile, QR codes, gift cards, customer credit — even split payments across multiple methods in a single transaction.</p>
+          </div>
+
+          <div class="feature-card reveal" data-delay="200">
+            <div class="feature-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+            </div>
+            <h3 class="feature-card__title">Customer Loyalty</h3>
+            <p class="feature-card__desc">Points system with tiered rewards. Customer groups. Purchase history analytics. Build relationships that keep customers coming back.</p>
+          </div>
+
+          <div class="feature-card reveal" data-delay="250">
+            <div class="feature-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 002 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+            </div>
+            <h3 class="feature-card__title">Smart Inventory</h3>
+            <p class="feature-card__desc">Product variants (size, color). Low stock alerts. Batch import/export. Supplier management with full purchase order lifecycle.</p>
+          </div>
+
+          <div class="feature-card reveal" data-delay="300">
+            <div class="feature-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+            </div>
+            <h3 class="feature-card__title">Enterprise Security</h3>
+            <p class="feature-card__desc">MFA authentication. 150+ granular permissions. Attribute-based access control. Tamper-evident audit logs with SHA-256 hash chaining.</p>
+          </div>
+
+          <div class="feature-card reveal" data-delay="350">
+            <div class="feature-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><path d="M6 8h.01M9 8h.01"/></svg>
+            </div>
+            <h3 class="feature-card__title">Multi-Platform</h3>
+            <p class="feature-card__desc">Web, Windows desktop, and mobile — from one codebase. Desktop syncs over LAN without internet. Your team works from anywhere.</p>
+          </div>
+
+          <div class="feature-card reveal" data-delay="400">
+            <div class="feature-card__icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3 class="feature-card__title">Real-Time Analytics</h3>
+            <p class="feature-card__desc">Sales by product, category, customer. Inventory movements. Financial reports. Scheduled exports in PDF, Excel, or CSV.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- APP EXPERIENCE / DEMOS                 -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="section experience" id="experience">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">The Experience</span>
+          <h2 class="section__title">Designed for the pace<br><span class="text-accent">of real retail.</span></h2>
+          <p class="section__desc">Every screen, every interaction — engineered for speed and clarity when it matters most.</p>
+        </div>
+
+        <div class="experience__showcase">
+          <!-- Screen Stack -->
+          <div class="experience__screens reveal">
+            <div class="experience__screen experience__screen--back">
+              <div class="screen-mock screen-mock--inventory">
+                <div class="screen-mock__bar">
+                  <div class="screen-mock__dots"><span></span><span></span><span></span></div>
+                  <span class="screen-mock__title">Inventory Management</span>
+                </div>
+                <div class="screen-mock__body">
+                  <div class="screen-mock__sidebar">
+                    <div class="mock-nav-item active"></div>
+                    <div class="mock-nav-item"></div>
+                    <div class="mock-nav-item"></div>
+                    <div class="mock-nav-item"></div>
+                    <div class="mock-nav-item"></div>
+                  </div>
+                  <div class="screen-mock__content">
+                    <div class="mock-header-bar"></div>
+                    <div class="mock-table">
+                      <div class="mock-row mock-row--header"><span></span><span></span><span></span><span></span></div>
+                      <div class="mock-row"><span></span><span></span><span class="mock-badge mock-badge--green"></span><span></span></div>
+                      <div class="mock-row"><span></span><span></span><span class="mock-badge mock-badge--amber"></span><span></span></div>
+                      <div class="mock-row"><span></span><span></span><span class="mock-badge mock-badge--green"></span><span></span></div>
+                      <div class="mock-row"><span></span><span></span><span class="mock-badge mock-badge--red"></span><span></span></div>
+                      <div class="mock-row"><span></span><span></span><span class="mock-badge mock-badge--green"></span><span></span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="experience__screen experience__screen--mid">
+              <div class="screen-mock screen-mock--dashboard">
+                <div class="screen-mock__bar">
+                  <div class="screen-mock__dots"><span></span><span></span><span></span></div>
+                  <span class="screen-mock__title">Dashboard</span>
+                </div>
+                <div class="screen-mock__body">
+                  <div class="screen-mock__sidebar">
+                    <div class="mock-nav-item active"></div>
+                    <div class="mock-nav-item"></div>
+                    <div class="mock-nav-item"></div>
+                    <div class="mock-nav-item"></div>
+                  </div>
+                  <div class="screen-mock__content">
+                    <div class="mock-stat-row">
+                      <div class="mock-stat"><div class="mock-stat__value"></div><div class="mock-stat__label"></div></div>
+                      <div class="mock-stat"><div class="mock-stat__value"></div><div class="mock-stat__label"></div></div>
+                      <div class="mock-stat"><div class="mock-stat__value"></div><div class="mock-stat__label"></div></div>
+                    </div>
+                    <div class="mock-chart">
+                      <svg viewBox="0 0 300 100" preserveAspectRatio="none">
+                        <path d="M0,80 C30,70 60,40 90,50 C120,60 150,20 180,30 C210,40 240,10 270,25 L300,20 L300,100 L0,100 Z" fill="url(#chartGrad)" opacity="0.3"/>
+                        <path d="M0,80 C30,70 60,40 90,50 C120,60 150,20 180,30 C210,40 240,10 270,25 L300,20" fill="none" stroke="var(--accent)" stroke-width="2"/>
+                        <defs><linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="var(--accent)"/><stop offset="100%" stop-color="transparent"/></linearGradient></defs>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="experience__screen experience__screen--front">
+              <div class="screen-mock screen-mock--pos">
+                <div class="screen-mock__bar">
+                  <div class="screen-mock__dots"><span></span><span></span><span></span></div>
+                  <span class="screen-mock__title">Point of Sale</span>
+                </div>
+                <div class="screen-mock__body screen-mock__body--pos">
+                  <div class="mock-pos-grid">
+                    <div class="mock-pos-item"></div>
+                    <div class="mock-pos-item"></div>
+                    <div class="mock-pos-item"></div>
+                    <div class="mock-pos-item"></div>
+                    <div class="mock-pos-item"></div>
+                    <div class="mock-pos-item"></div>
+                  </div>
+                  <div class="mock-pos-cart">
+                    <div class="mock-cart-item"><span></span><span class="mock-price"></span></div>
+                    <div class="mock-cart-item"><span></span><span class="mock-price"></span></div>
+                    <div class="mock-cart-item"><span></span><span class="mock-price"></span></div>
+                    <div class="mock-cart-divider"></div>
+                    <div class="mock-cart-total"><span></span><span class="mock-price mock-price--total"></span></div>
+                    <div class="mock-cart-btn"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature Highlights -->
+          <div class="experience__highlights">
+            <div class="experience__highlight reveal" data-delay="0">
+              <div class="experience__highlight-number">01</div>
+              <h3>Scan, Search, Sell</h3>
+              <p>Barcode scanning, SKU lookup, and category browsing — all optimized for the fastest checkout possible.</p>
+            </div>
+            <div class="experience__highlight reveal" data-delay="100">
+              <div class="experience__highlight-number">02</div>
+              <h3>Real-Time Visibility</h3>
+              <p>Dashboard updates as sales happen. Stock levels, revenue, top products — always current across all branches.</p>
+            </div>
+            <div class="experience__highlight reveal" data-delay="200">
+              <div class="experience__highlight-number">03</div>
+              <h3>Seamless Sync</h3>
+              <p>Branch goes offline? Operations continue normally. Reconnect and everything synchronizes automatically — no manual intervention.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- WHY WK-HUB / VALUE PROPOSITION         -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="section why" id="why">
+      <div class="why__bg">
+        <div class="why__glow"></div>
+      </div>
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">The Difference</span>
+          <h2 class="section__title">Built for how retail<br><span class="text-accent">actually works.</span></h2>
+          <p class="section__desc">Not another generic POS with a language pack. WK-Hub was designed from day one for the real challenges of multi-branch retail.</p>
+        </div>
+
+        <div class="why__grid">
+          <div class="why__card reveal" data-delay="0">
+            <div class="why__card-line"></div>
+            <div class="why__card-content">
+              <h3>True Offline-First</h3>
+              <p>Not "offline-capable." Branches operate independently with full functionality. Sales, inventory, accounting — everything works without a connection. Sync happens automatically on reconnect. Zero data loss.</p>
+            </div>
+          </div>
+
+          <div class="why__card reveal" data-delay="80">
+            <div class="why__card-line"></div>
+            <div class="why__card-content">
+              <h3>Real Multi-Branch Control</h3>
+              <p>Stock transfers with approval workflows. Branch-specific pricing and permissions. Consolidated reporting across locations. This is operational control — not just pretty dashboards.</p>
+            </div>
+          </div>
+
+          <div class="why__card reveal" data-delay="160">
+            <div class="why__card-line"></div>
+            <div class="why__card-content">
+              <h3>Native Experience</h3>
+              <p>Arabic-first UI with full RTL support. Local currency native. Local payment gateways integrated. Tax compliance built in. Designed for the market, not adapted for it.</p>
+            </div>
+          </div>
+
+          <div class="why__card reveal" data-delay="240">
+            <div class="why__card-line"></div>
+            <div class="why__card-content">
+              <h3>Accounting Built In</h3>
+              <p>Every transaction auto-generates double-entry journal entries. Chart of accounts, trial balance, P&L, balance sheet — all without a separate accounting package.</p>
+            </div>
+          </div>
+
+          <div class="why__card reveal" data-delay="320">
+            <div class="why__card-line"></div>
+            <div class="why__card-content">
+              <h3>Enterprise Permissions</h3>
+              <p>150+ granular permissions. Role-based + attribute-based access control. User-level overrides. Branch-scoped access. Tamper-evident audit logging. Simple to set up.</p>
+            </div>
+          </div>
+
+          <div class="why__card reveal" data-delay="400">
+            <div class="why__card-line"></div>
+            <div class="why__card-content">
+              <h3>No Vendor Lock-In</h3>
+              <p>API-first architecture with scoped keys and webhook subscriptions. Self-hosting option available. Your data, your infrastructure, your choice.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- VISION / ABOUT                         -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="section vision" id="vision">
+      <div class="container">
+        <div class="vision__layout">
+          <div class="vision__text reveal">
+            <span class="section__label">Our Vision</span>
+            <h2 class="vision__title">We believe retail<br>deserves better tools.</h2>
+            <div class="vision__body">
+              <p>We've seen retail businesses struggle with disconnected systems — a POS that can't track inventory, spreadsheets masquerading as accounting, WhatsApp threads replacing stock management.</p>
+              <p>WK-Hub exists because retail operators deserve a system that actually understands their daily reality. One that works during Friday rush when the internet drops. One that gives real-time visibility without requiring an IT department.</p>
+              <p>We're not building another generic SaaS product. We're building the operating system that retail businesses would design for themselves — if they had the time and the team.</p>
+            </div>
+            <div class="vision__values">
+              <div class="vision__value">
+                <span class="vision__value-icon">◆</span>
+                <span>Reliability over features</span>
+              </div>
+              <div class="vision__value">
+                <span class="vision__value-icon">◆</span>
+                <span>Simplicity over complexity</span>
+              </div>
+              <div class="vision__value">
+                <span class="vision__value-icon">◆</span>
+                <span>Honesty over hype</span>
+              </div>
+            </div>
+          </div>
+          <div class="vision__visual reveal" data-delay="200">
+            <div class="vision__abstract">
+              <div class="vision__ring vision__ring--1"></div>
+              <div class="vision__ring vision__ring--2"></div>
+              <div class="vision__ring vision__ring--3"></div>
+              <div class="vision__center-mark">WK</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- SERVICES                               -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="section services" id="services">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="section__label">Beyond the POS</span>
+          <h2 class="section__title">A complete ecosystem<br><span class="text-accent">for your business.</span></h2>
+        </div>
+
+        <div class="services__grid">
+          <div class="service-card reveal" data-delay="0">
+            <div class="service-card__number">01</div>
+            <h3 class="service-card__title">Desktop Application</h3>
+            <p class="service-card__desc">Self-contained Windows app with embedded database. Works completely offline. Syncs over LAN between branches — no internet required.</p>
+            <div class="service-card__tags">
+              <span>Windows</span><span>Offline</span><span>LAN Sync</span>
+            </div>
+          </div>
+
+          <div class="service-card reveal" data-delay="80">
+            <div class="service-card__number">02</div>
+            <h3 class="service-card__title">Mobile App</h3>
+            <p class="service-card__desc">Full POS capabilities in your pocket. Scan barcodes, check inventory, process sales, and manage your business from anywhere.</p>
+            <div class="service-card__tags">
+              <span>iOS</span><span>Android</span><span>Barcode Scan</span>
+            </div>
+          </div>
+
+          <div class="service-card reveal" data-delay="160">
+            <div class="service-card__number">03</div>
+            <h3 class="service-card__title">E-Commerce Bridge</h3>
+            <p class="service-card__desc">Sync your product catalog to your online store. Orders flow back automatically for fulfillment. One source of truth for inventory.</p>
+            <div class="service-card__tags">
+              <span>Product Sync</span><span>Order Webhooks</span><span>Real-Time</span>
+            </div>
+          </div>
+
+          <div class="service-card reveal" data-delay="240">
+            <div class="service-card__number">04</div>
+            <h3 class="service-card__title">Admin Command Center</h3>
+            <p class="service-card__desc">Enterprise-grade administration. Manage tenants, monitor API usage, control feature flags, and oversee the entire platform.</p>
+            <div class="service-card__tags">
+              <span>Multi-Tenant</span><span>API Metering</span><span>Monitoring</span>
+            </div>
+          </div>
+
+          <div class="service-card reveal" data-delay="320">
+            <div class="service-card__number">05</div>
+            <h3 class="service-card__title">Hardware Integration</h3>
+            <p class="service-card__desc">Thermal receipt printers, barcode scanners, weighing scales, cash drawers — seamlessly connected to your POS workflow.</p>
+            <div class="service-card__tags">
+              <span>Printers</span><span>Scanners</span><span>Scales</span>
+            </div>
+          </div>
+
+          <div class="service-card reveal" data-delay="400">
+            <div class="service-card__number">06</div>
+            <h3 class="service-card__title">API & Webhooks</h3>
+            <p class="service-card__desc">Build on top of WK-Hub. Scoped API keys, event-driven webhooks with HMAC signatures, and comprehensive documentation.</p>
+            <div class="service-card__tags">
+              <span>REST API</span><span>Webhooks</span><span>Custom Build</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!-- CALL TO ACTION                         -->
+    <!-- ═══════════════════════════════════════ -->
+    <section class="section cta" id="contact">
+      <div class="cta__bg">
+        <div class="cta__orb cta__orb--1"></div>
+        <div class="cta__orb cta__orb--2"></div>
+      </div>
+      <div class="container">
+        <div class="cta__content reveal">
+          <span class="section__label">Ready?</span>
+          <h2 class="cta__title">See if WK-Hub fits<br>your operations.</h2>
+          <p class="cta__desc">No sales pressure. No commitment. Just an honest conversation about whether WK-Hub is the right fit for your business.</p>
+          <div class="cta__actions">
+            <a href="demo.html" class="btn btn--primary btn--lg">
+              <span>Request a Demo</span>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+            <a href="contact.html" class="btn btn--ghost btn--lg">
+              <span>Contact Us</span>
+            </a>
+          </div>
+          <p class="cta__note">Response within 24 hours. No credit card required.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <div class="nav__logo-mark">WK</div>
+            <span class="nav__logo-text">Hub</span>
+          </div>
+          <p class="footer__tagline">The business system that works<br>when the internet doesn't.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Product</h4>
+            <a href="#product">Overview</a>
+            <a href="#features">Features</a>
+            <a href="#experience">Experience</a>
+            <a href="#services">Services</a>
+          </div>
+          <div class="footer__col">
+            <h4>Company</h4>
+            <a href="#vision">Our Vision</a>
+            <a href="contact.html">Contact</a>
+            <a href="demo.html">Request Demo</a>
+          </div>
+          <div class="footer__col">
+            <h4>Platform</h4>
+            <a href="platform-web.html">Web App</a>
+            <a href="platform-desktop.html">Desktop</a>
+            <a href="platform-mobile.html">Mobile</a>
+            <a href="platform-api.html">API Docs</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 WK-Hub. All rights reserved.</p>
+        <p>Built for retail.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

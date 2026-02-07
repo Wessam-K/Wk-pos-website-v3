@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with the WK-Hub team. Questions, partnerships, or just want to chat — we're here.">
+  <meta name="theme-color" content="#0a0a12">
+  <title>Contact Us — WK-Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/light.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230a0a12'/%3E%3Ctext x='16' y='22' font-family='Inter,sans-serif' font-weight='700' font-size='14' fill='%23d4a853' text-anchor='middle'%3EWK%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__logo" aria-label="WK-Hub Home">
+        <div class="nav__logo-mark">WK</div>
+        <span class="nav__logo-text">Hub</span>
+      </a>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav__menu" id="nav-menu">
+        <a href="index.html#product" class="nav__link">Product</a>
+        <a href="index.html#features" class="nav__link">Features</a>
+        <a href="index.html#experience" class="nav__link">Experience</a>
+        <a href="index.html#why" class="nav__link">Why WK-Hub</a>
+        <a href="index.html#vision" class="nav__link">Vision</a>
+        <a href="index.html#services" class="nav__link">Services</a>
+      </div>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+        <div class="theme-toggle__thumb">
+          <svg class="theme-toggle__icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+        </div>
+      </button>
+      <a href="demo.html" class="nav__cta">Get Started</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Page Header -->
+    <header class="page-header">
+      <div class="page-header__bg">
+        <div class="page-header__orb page-header__orb--1"></div>
+        <div class="page-header__orb page-header__orb--2"></div>
+      </div>
+      <div class="container">
+        <div class="section__label reveal">Contact</div>
+        <h1 class="page-header__title reveal" data-delay="100">
+          Let's <span class="text-accent">talk.</span>
+        </h1>
+        <p class="page-header__desc reveal" data-delay="200">
+          Questions, ideas, partnerships, or feedback — we'd love to hear from you. No bots, no auto-replies. Real people.
+        </p>
+      </div>
+    </header>
+
+    <!-- Contact Methods -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="contact-methods">
+          <div class="contact-method reveal" data-delay="0">
+            <div class="contact-method__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <h3 class="contact-method__title">Email Us</h3>
+            <p class="contact-method__value">hello@wkhub.com</p>
+          </div>
+
+          <div class="contact-method reveal" data-delay="80">
+            <div class="contact-method__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <h3 class="contact-method__title">Call Us</h3>
+            <p class="contact-method__value">+20 XXX XXX XXXX</p>
+          </div>
+
+          <div class="contact-method reveal" data-delay="160">
+            <div class="contact-method__icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <h3 class="contact-method__title">Visit Us</h3>
+            <p class="contact-method__value">Cairo, Egypt</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section form-section" style="padding-top: 0;">
+      <div class="container">
+        <div class="form-layout">
+          <!-- Left Info -->
+          <div class="form-info reveal">
+            <h2 class="form-info__title">How can we<br>help you?</h2>
+            <p class="form-info__desc">Whether you're exploring WK-Hub for the first time, have a technical question, or want to discuss a partnership — we're here to help. No sales scripts.</p>
+
+            <div class="form-info__features">
+              <div class="form-info__feature">
+                <div class="form-info__feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                </div>
+                <div>
+                  <h4>General Inquiries</h4>
+                  <p>Learn about WK-Hub, our approach, or how we might work together.</p>
+                </div>
+              </div>
+
+              <div class="form-info__feature">
+                <div class="form-info__feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </div>
+                <div>
+                  <h4>Technical Support</h4>
+                  <p>Already using WK-Hub? Our team is ready to help with any questions or issues.</p>
+                </div>
+              </div>
+
+              <div class="form-info__feature">
+                <div class="form-info__feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+                </div>
+                <div>
+                  <h4>Partnerships</h4>
+                  <p>Interested in integrating WK-Hub or becoming a reseller? Let's explore the possibilities.</p>
+                </div>
+              </div>
+
+              <div class="form-info__feature">
+                <div class="form-info__feature-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                </div>
+                <div>
+                  <h4>Feedback</h4>
+                  <p>Ideas, suggestions, or feature requests are always welcome. We build with our users.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Form -->
+          <div class="form-card reveal" data-delay="100">
+            <h3 class="form-card__title">Send Us a Message</h3>
+            <p class="form-card__subtitle">We'll respond within 24 hours.</p>
+
+            <form id="contact-form" novalidate>
+              <div class="form__row">
+                <div class="form__group">
+                  <label class="form__label" for="firstName">First Name *</label>
+                  <input class="form__input" type="text" id="firstName" name="firstName" placeholder="Ahmed" required>
+                </div>
+                <div class="form__group">
+                  <label class="form__label" for="lastName">Last Name *</label>
+                  <input class="form__input" type="text" id="lastName" name="lastName" placeholder="Hassan" required>
+                </div>
+              </div>
+
+              <div class="form__group">
+                <label class="form__label" for="email">Email Address *</label>
+                <input class="form__input" type="email" id="email" name="email" placeholder="ahmed@example.com" required>
+              </div>
+
+              <div class="form__group">
+                <label class="form__label" for="subject">Subject</label>
+                <select class="form__select" id="subject" name="subject">
+                  <option value="">Select a topic...</option>
+                  <option value="general">General Inquiry</option>
+                  <option value="demo">Product Demo</option>
+                  <option value="support">Technical Support</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="feedback">Feedback & Suggestions</option>
+                  <option value="media">Press & Media</option>
+                </select>
+              </div>
+
+              <div class="form__group">
+                <label class="form__label" for="message">Your Message *</label>
+                <textarea class="form__textarea" id="message" name="message" placeholder="Tell us what's on your mind..." required style="min-height: 160px;"></textarea>
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--lg form__submit">
+                <span>Send Message</span>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              </button>
+              <p class="form__note">We read every message. No auto-replies.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <div class="nav__logo-mark">WK</div>
+            <span class="nav__logo-text">Hub</span>
+          </div>
+          <p class="footer__tagline">The business system that works<br>when the internet doesn't.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Product</h4>
+            <a href="index.html#product">Overview</a>
+            <a href="index.html#features">Features</a>
+            <a href="index.html#experience">Experience</a>
+            <a href="index.html#services">Services</a>
+          </div>
+          <div class="footer__col">
+            <h4>Company</h4>
+            <a href="index.html#vision">Our Vision</a>
+            <a href="contact.html">Contact</a>
+            <a href="demo.html">Request Demo</a>
+          </div>
+          <div class="footer__col">
+            <h4>Platform</h4>
+            <a href="platform-web.html">Web App</a>
+            <a href="platform-desktop.html">Desktop</a>
+            <a href="platform-mobile.html">Mobile</a>
+            <a href="platform-api.html">API Docs</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2026 WK-Hub. All rights reserved.</p>
+        <p>Built for retail.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
