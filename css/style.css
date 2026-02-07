@@ -102,6 +102,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 html {
@@ -109,6 +110,8 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -118,6 +121,7 @@ body {
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
+  min-height: 100dvh;
 }
 
 ::selection {
@@ -282,6 +286,11 @@ img, svg {
   gap: var(--space-xl);
 }
 
+/* Hide mobile CTA on desktop */
+.nav__menu-cta {
+  display: none;
+}
+
 .nav__link {
   font-size: var(--text-sm);
   font-weight: 500;
@@ -333,8 +342,13 @@ img, svg {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 12px;
   z-index: 101;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
 }
 
 .nav__toggle span {
@@ -502,6 +516,7 @@ img, svg {
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   font-family: var(--font);
   font-size: var(--text-sm);
@@ -514,6 +529,8 @@ img, svg {
               box-shadow var(--duration-fast) var(--ease-out),
               background var(--duration-fast) var(--ease-out);
   will-change: transform;
+  touch-action: manipulation;
+  min-height: 44px;
 }
 
 .btn--primary {
@@ -1585,6 +1602,10 @@ img, svg {
     --space-5xl: 5rem;
   }
 
+  .nav__inner {
+    padding: 0 var(--space-md);
+  }
+
   .nav__menu {
     display: none;
     position: fixed;
@@ -1594,11 +1615,14 @@ img, svg {
     bottom: 0;
     background: rgba(10, 10, 18, 0.97);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: var(--space-xl);
     z-index: 100;
+    padding: var(--space-4xl) var(--space-lg);
+    padding-top: calc(var(--nav-height) + var(--space-2xl));
   }
 
   .nav__menu.open {
@@ -1607,14 +1631,35 @@ img, svg {
 
   .nav__menu .nav__link {
     font-size: var(--text-xl);
+    padding: var(--space-xs) 0;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Show CTA inside mobile menu */
+  .nav__menu .nav__menu-cta {
+    display: inline-flex;
+    margin-top: var(--space-lg);
   }
 
   .nav__toggle {
     display: flex;
   }
 
+  /* Hide nav bar CTA on mobile, show inside menu instead */
   .nav__cta {
     display: none;
+  }
+
+  .theme-toggle {
+    order: 0;
+  }
+
+  .hero {
+    min-height: calc(100dvh - env(safe-area-inset-bottom, 0px));
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
   }
 
   .hero__title {
@@ -1623,11 +1668,18 @@ img, svg {
 
   .hero__subtitle {
     font-size: var(--text-base);
+    padding: 0 var(--space-xs);
   }
 
   .hero__actions {
     flex-direction: column;
     gap: var(--space-sm);
+    width: 100%;
+    padding: 0 var(--space-lg);
+  }
+
+  .hero__actions .btn {
+    width: 100%;
   }
 
   .hero__proof {
@@ -1642,13 +1694,26 @@ img, svg {
     display: none;
   }
 
+  .section {
+    padding: var(--space-3xl) 0;
+  }
+
   .section__title {
     font-size: var(--text-3xl);
+  }
+
+  .section__desc {
+    font-size: var(--text-base);
   }
 
   .features__grid,
   .services__grid {
     grid-template-columns: 1fr;
+  }
+
+  .product__flow {
+    margin: 0 calc(-1 * var(--space-md));
+    padding: var(--space-lg) var(--space-md);
   }
 
   .product__flow-card {
@@ -1659,8 +1724,13 @@ img, svg {
     display: none;
   }
 
+  .experience__showcase {
+    gap: var(--space-2xl);
+  }
+
   .experience__screens {
-    height: 300px;
+    height: auto;
+    min-height: 280px;
   }
 
   .experience__screen--back,
@@ -1674,8 +1744,26 @@ img, svg {
     transform: none;
   }
 
+  .screen-mock__body--pos {
+    grid-template-columns: 1fr 140px;
+  }
+
+  .cta__title {
+    font-size: var(--text-3xl);
+  }
+
   .cta__actions {
     flex-direction: column;
+    width: 100%;
+    padding: 0 var(--space-lg);
+  }
+
+  .cta__actions .btn {
+    width: 100%;
+  }
+
+  .footer {
+    padding: var(--space-3xl) 0 var(--space-xl);
   }
 
   .footer__links {
@@ -1700,6 +1788,16 @@ img, svg {
     padding: 6px 14px;
   }
 
+  .hero__proof {
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero__proof-divider {
+    height: 30px;
+  }
+
   .product__flow-card {
     flex: 0 0 220px;
     padding: var(--space-lg);
@@ -1711,13 +1809,41 @@ img, svg {
     padding: var(--space-lg);
   }
 
+  .screen-mock__body--pos {
+    grid-template-columns: 1fr;
+  }
+
+  .mock-pos-cart {
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+
   .vision__abstract {
     width: 200px;
     height: 200px;
   }
 
+  .page-header__title {
+    font-size: var(--text-3xl);
+  }
+
   .footer__links {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Safe area support for notched devices */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .footer__bottom {
+    padding-bottom: calc(var(--space-xl) + env(safe-area-inset-bottom));
+  }
+
+  .nav {
+    padding-top: env(safe-area-inset-top);
+  }
+
+  .nav__menu.open {
+    padding-bottom: env(safe-area-inset-bottom);
   }
 }
 

@@ -146,6 +146,8 @@
 /* Mobile menu overlay */
 [data-theme="light"] .nav__menu.open {
   background: rgba(248, 247, 244, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
 }
 
 /* Toggle dot color */
@@ -762,6 +764,38 @@
 
   .specs__grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .api-endpoint {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .platform-hero__title {
+    font-size: clamp(1.75rem, 6vw, 2.5rem);
+  }
+
+  .platform-hero__actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .platform-hero__actions .btn {
+    width: 100%;
+  }
+
+  .code-block {
+    font-size: 11px;
+    padding: var(--space-md);
+  }
+
+  .page-header {
+    padding-top: calc(var(--nav-height) + var(--space-2xl));
+    padding-bottom: var(--space-2xl);
+  }
+
+  .page-header__title {
+    font-size: var(--text-3xl);
   }
 }
 
